@@ -1,6 +1,6 @@
 [
     {"id":"1001", "image":"http://localhost:8080/blue-crystal.png" },
-    {"id":"1001", "image":"http://localhost:8080/bust.png" },
+    {"id":"1002", "image":"http://localhost:8080/bust.png" },
     {"id":"1003", "image":"http://localhost:8080/caldron.png" },
     {"id":"1004", "image":"http://localhost:8080/candles.png" },
     {"id":"1005", "image":"http://localhost:8080/dino.png" },

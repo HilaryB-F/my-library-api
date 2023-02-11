@@ -8,8 +8,8 @@ router.get("/", (_req, res) => {
     res.json(data);
   });
   router.post("/", (req, res) => {
-    const { title, author, series, rating, finished, image  } = req.body;
-    const books = { id: v4(), title, author, series, rating, finished, image };
+    const { title, author, series, rating, finished, image, order, color, room  } = req.body;
+    const books = { id: v4(), title, author, series, rating, finished, image, order, color, room };
     data.push(books);
     fs.writeFileSync("./data/book.json", JSON.stringify(data), (err) => {
     });
