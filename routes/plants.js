@@ -1,10 +1,20 @@
 const express = require("express");
-const plantData = require("../data/plant.json");
 const router = express.Router();
+const data = require("../data/plant.json")
 
 router.get("/", (_req, res) => {
-    res.json(plantData);
-  });
+  res.json(data);
+});
 
+router.delete("/", (req, res) => {
+  const plantData = JSON.parse(fs.readFileSync("./data/plant.json"));
+  const updatedData = plantData.filter((plant) => plant.id !== req.body.id);
+  fs.writeFileSync(
+    "./data/plant.json",
+    JSON.stringify(updatedData),
+    (err) => {}
+  );
+  res.sendStatus(201);
+});
 
-  module.exports = router;
+module.exports = router;

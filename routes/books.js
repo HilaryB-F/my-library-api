@@ -2,7 +2,6 @@ const express = require("express");
 const fs = require("node:fs");
 const router = express.Router();
 const { v4 } = require("uuid");
-// const data = require("../data/book.json");
 
 router.get("/", (_req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/book.json"));
