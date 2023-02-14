@@ -28,29 +28,27 @@ router.post("/", (req, res) => {
   res.status(201).json(books);
 });
 
-router.get("/:id", (req, res) => {
-  getBooks(req, res);
-});
+// router.get("/:id", (req, res) => {
+//   getBooks(req, res);
+// });
 
 router.put("/", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/book.json"));
-  const { title, author, series, rating, finished, image, order, color, room } =
-    req.body;
-  const books = {
-    id: v4(),
-    title,
-    author,
-    series,
-    rating,
-    finished,
-    image,
-    order,
-    color,
-    room,
-  };
-  data.push(books);
-  fs.writeFileSync("./data/book.json", JSON.stringify(data), (err) => {});
-  res.status(201).json(books);
+  function updatedData() {
+    const newArr = [];
+    data.map((book) => {
+      if (req.body.id == book.id) {
+        book = req.body;
+        newArr.push(book);
+      } else {
+        newArr.push(book);
+      }
+      return newArr;
+    });
+    fs.writeFileSync("./data/book.json", JSON.stringify(newArr), (err) => {});
+    res.status(201).json(newArr);
+  }
+  updatedData();
 });
 
 router.delete("/", (req, res) => {
