@@ -28,10 +28,6 @@ router.post("/", (req, res) => {
   res.status(201).json(books);
 });
 
-// router.get("/:id", (req, res) => {
-//   getBooks(req, res);
-// });
-
 router.put("/", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/book.json"));
   function updatedData() {
