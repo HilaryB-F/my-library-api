@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const data = require("../data/decor.json")
-
+const data = require("../data/decor.json");
 
 router.get("/", (_req, res) => {
   res.json(data);
