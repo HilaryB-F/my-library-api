@@ -4,6 +4,7 @@ const app = express();
 const books = require("./routes/books");
 const plants = require("./routes/plants");
 const decor = require("./routes/decor");
+const PORT = process.env.PORT || 3000
 
 app.use(cors());
 app.use(express.json());
@@ -21,6 +22,6 @@ app.use("/addPlants", plants);
 
 app.use("/addDecor", decor);
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
   console.log("Hello from port 8080 🚀");
 });
