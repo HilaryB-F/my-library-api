@@ -4,7 +4,7 @@ const app = express();
 const books = require("./routes/books");
 const plants = require("./routes/plants");
 const decor = require("./routes/decor");
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT 
 
 app.use(cors());
 app.use(express.json());
